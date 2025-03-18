@@ -196,7 +196,7 @@ onMounted(() => {
 
 <style scoped>
 .account-manager {
-  width: 100%;
+  width: 1200px;
   max-width: 95%;
   padding: 20px;
   margin: 0;
