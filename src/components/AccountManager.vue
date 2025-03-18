@@ -37,6 +37,16 @@
             show-word-limit
             @blur="updateTags(account)"
           />
+          <div v-if="account.tags.length > 0" class="tags-container">
+            <el-tag
+              v-for="tag in account.tags"
+              :key="tag.text"
+              size="small"
+              class="tag-item"
+            >
+              {{ tag.text }}
+            </el-tag>
+          </div>
         </div>
 
         <div class="account-field">
@@ -230,5 +240,16 @@ onMounted(() => {
 
 :deep(.el-input__wrapper.is-error) {
   box-shadow: 0 0 0 1px #f56c6c inset;
+}
+
+.tags-container {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag-item {
+  margin-right: 0;
 }
 </style> 
