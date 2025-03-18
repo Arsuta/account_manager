@@ -35,5 +35,6 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 </style>

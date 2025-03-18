@@ -197,8 +197,8 @@ onMounted(() => {
 <style scoped>
 .account-manager {
   width: 100%;
-  max-width: 1400px;
-  padding: 30px;
+  max-width: 95%;
+  padding: 20px;
   margin: 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   background-color: var(--card-background);
@@ -208,9 +208,9 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 15px;
   border-bottom: 2px solid var(--primary-light);
-  padding-bottom: 16px;
+  padding-bottom: 10px;
 }
 
 .account-header h1 {
@@ -233,8 +233,8 @@ onMounted(() => {
 }
 
 .account-info {
-  margin-bottom: 24px;
-  padding: 12px;
+  margin-bottom: 15px;
+  padding: 10px;
   border-radius: 4px;
   background-color: var(--primary-light);
   color: var(--text-color);
@@ -258,14 +258,14 @@ onMounted(() => {
 .account-list-header {
   display: flex;
   background-color: var(--primary-color);
-  padding: 16px;
+  padding: 10px 8px;
   font-weight: bold;
   color: white;
 }
 
 .account-item {
   display: flex;
-  padding: 16px;
+  padding: 12px 8px;
   border-top: 1px solid var(--border-color);
   transition: background-color 0.2s;
 }
@@ -277,11 +277,44 @@ onMounted(() => {
 .field-header,
 .account-field {
   flex: 1;
-  padding: 0 12px;
+  padding: 0 8px;
+}
+
+/* Разное соотношение ширины для разных полей */
+.account-item > .account-field:nth-child(1) {
+  flex: 2;  /* Поле "Метка" шире остальных */
+}
+
+.account-item > .account-field:nth-child(2) {
+  flex: 1;  /* Поле "Тип записи" */
+}
+
+.account-item > .account-field:nth-child(3) {
+  flex: 1.5;  /* Поле "Логин" */
+}
+
+.account-item > .account-field:nth-child(4) {
+  flex: 1.5;  /* Поле "Пароль" */
+}
+
+.account-list-header > .field-header:nth-child(1) {
+  flex: 2;  /* Заголовок "Метка" */
+}
+
+.account-list-header > .field-header:nth-child(2) {
+  flex: 1;  /* Заголовок "Тип записи" */
+}
+
+.account-list-header > .field-header:nth-child(3) {
+  flex: 1.5;  /* Заголовок "Логин" */
+}
+
+.account-list-header > .field-header:nth-child(4) {
+  flex: 1.5;  /* Заголовок "Пароль" */
 }
 
 .account-actions {
-  flex: 0 0 100px;
+  flex: 0 0 80px;
   text-align: center;
   display: flex;
   align-items: center;
