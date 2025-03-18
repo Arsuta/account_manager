@@ -1,33 +1,46 @@
-# account-manager
+# Форма управления учетными записями
 
-This template should help get you started developing with Vue 3 in Vite.
+Проект представляет собой форму для управления учетными записями с возможностью добавления, редактирования и удаления аккаунтов.
 
-## Recommended IDE Setup
+## Технологии
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue.js 3 с Composition API
+- TypeScript
+- Pinia для управления состоянием
+- Element Plus в качестве UI библиотеки
+- Vite для сборки проекта
 
-## Type Support for `.vue` Imports in TS
+## Функциональность
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Добавление новых учетных записей
+- Редактирование существующих записей
+- Удаление учетных записей
+- Валидация полей формы
+- Поддержка двух типов учетных записей: LDAP и Локальная
+- Сохранение данных в localStorage для персистентности
 
-## Customize configuration
+## Структура проекта
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- `src/components/AccountManager.vue` - основной компонент с формой
+- `src/stores/accounts.ts` - хранилище Pinia для управления данными
+- `src/App.vue` - корневой компонент приложения
 
-## Project Setup
+## Запуск проекта
 
 ```sh
+# Установка зависимостей
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Запуск в режиме разработки
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# Сборка для продакшн
 npm run build
 ```
+
+## Требования к форме
+
+- **Метка**: Необязательное поле, максимум 50 символов. Текстовые метки вводятся через знак `;`
+- **Тип записи**: Выпадающий список с вариантами LDAP и Локальная
+- **Логин**: Обязательное поле, максимум 100 символов
+- **Пароль**: Обязательное поле для типа "Локальная", максимум 100 символов. Скрыто для типа "LDAP"
